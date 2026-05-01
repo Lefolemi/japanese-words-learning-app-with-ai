@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Deck - {{ level }}</title>
+</head>
+<body>
+    <h1>{{ level.upper() }} Decks</h1>
+    <div id="deck-list">
+        {% for deck in decks %}
+            <p>
+                <strong>{{ deck.name }}:</strong> 
+                <a href="/session/{{ level }}/{{ deck.id }}?mode=normal">Normal Mode</a> | 
+                <a href="/session/{{ level }}/{{ deck.id }}?mode=practice">Practice Mode</a>
+                (Words: {{ deck.range }})
+            </p>
+        {% endfor %}
+    </div>
+    <a href="/">Back to Menu</a>
+</body>
+</html>

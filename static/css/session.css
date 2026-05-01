@@ -1,0 +1,10 @@
+/* Core Layout */
+.question-card { display: none; text-align: center; margin-top: 50px; }
+.question-card.active { display: block; } /* This replaces the Jinja style error */
+
+.answer-zone.hidden { display: none; }
+.hidden { display: none !important; }
+
+/* Flagging and Jump Grid Styles */
+.grid-item.flagged-item { background-color: #ffcccc; border: 2px solid red; }
+.grid-item.current-item { background-color: #e0f0ff; border: 2px solid blue; }

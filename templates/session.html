@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .mark-btn {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .mark-btn.is-marked {
+            background-color: gold;
+            font-weight: bold;
+            border-color: #d4af37;
+        }
+    </style>
+
+    <title>Session - {{ level }}</title>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="/static/js/recorder.js" defer></script>
+</head>
+<body>
+    <h1>{{ level.upper() }} - Deck {{ deck_id + 1 }}</h1>
+    <p>Mode: {{ mode }}</p>
+
+    <div id="quiz-container">
+        {% for word in words %}
+        <div class="word-card" style="border: 1px solid #ccc; padding: 10px; margin: 5px;">
+            <h3>{{ word.original }} ({{ word.furigana }})</h3>
+            <p>Meaning: {{ word.english }}</p>
+            
+            <button onclick="sendVoiceSample('{{ word.original }}')">🎤 Speak</button>
+            
+            <button 
+                id="mark-btn-{{ word.id }}" 
+                onclick="toggleMark('{{ word.id }}', this)" 
+                class="mark-btn {{ 'is-marked' if word.is_marked else '' }}">
+                {{ '⭐ Marked' if word.is_marked else '☆ Mark' }}
+            </button>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div id="feedback-box" style="background: #f0f0f0; padding: 20px; margin-top: 20px;">
+        AI Feedback will appear here...
+    </div>
+</body>
+</html>
