@@ -1,8 +1,0 @@
-#!E:\Rezon\Materi Belajar\BUDI LUHUR\MATA KULIAH\Semester 4 - Neverending Threads\Z1 - Computer Vision\RnL\rnl-python\venv\Scripts\python.exe
-# -*- coding: UTF-8 -*-
-from __future__ import print_function, division, absolute_import
-
-from numba.misc.numba_entry import main
-
-if __name__ == "__main__":
-    main()
