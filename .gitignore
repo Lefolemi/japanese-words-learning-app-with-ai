@@ -1,0 +1,19 @@
+# Python environment
+venv/
+env/
+__pycache__/
+*.py[cod]
+
+# SQLite Database
+database/*.db
+
+# Local configuration (Contains API keys)
+config.py
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Audio processing temp files (if generated)
+audio/*.wav
+audio/*.mp3
